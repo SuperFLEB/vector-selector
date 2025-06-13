@@ -1,0 +1,32 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+		"moduleResolution": "bundler",
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+		"lib": ["dom", "es2023"],
+
+		"isolatedModules": true,
+		"allowImportingTsExtensions": true,
+
+		"noEmit": true,
+		"emitDeclarationOnly": false,
+		"declaration": false,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+		"paths": {
+			"@/*": ["./src/*"],
+			"@exp/*": ["./src/exported/*"],
+			"@apps/*": ["./src/apps/*"],
+			"@themes/*": ["./src/themes/*"],
+			"@t/*": ["./src/types/*"],
+			"*": ["./*", "./*/index.vue", "./*/index"],
+		}
+	},
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "demo/**/*.ts", "demo/**/*.vue"]
+}

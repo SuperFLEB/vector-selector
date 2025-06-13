@@ -1,0 +1,20 @@
+:root, html, body {
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	min-width: 100vw;
+	min-height: 100vh;
+	text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+}
+
+body {
+	margin: 1em;
+}
+
+body, #app {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}

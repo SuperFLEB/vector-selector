@@ -1,0 +1,60 @@
+{
+	"name": "@superfleb/vue-vector-selector",
+	"private": true,
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "vite",
+		"build": "vue-tsc -b && vite build",
+		"justbuild": "vite build",
+		"build-demo": "vite build -c vite.build-demo.config.ts",
+		"preview": "vite preview",
+		"circular": "madge --circular --ts-config ./tsconfig.app.json --extensions .ts,.tsx,.js,.jsx,.vue src/app/App.vue"
+	},
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.mjs"
+			}
+		},
+		"./components": {
+			"import": {
+				"types": "./dist/exported/index.d.ts",
+				"default": "./dist/exported/index.mjs"
+			}
+		},
+		"./components/*": {
+			"import": {
+				"default": "./dist/exported/*.mjs"
+			}
+		},
+		"./apps": {
+			"import": {
+				"types": "./dist/apps/index.d.ts",
+				"default": "./dist/apps/index.mjs"
+			}
+		},
+		"./apps/*": {
+			"import": {
+				"default": "./dist/apps/*.mjs"
+			}
+		}
+	},
+	"dependencies": {
+		"vue": "^3.5.13",
+		"vue-sfc-transformer": "^0.1.11"
+	},
+	"devDependencies": {
+		"@types/node": "^22.13.5",
+		"@vitejs/plugin-vue": "^5.2.3",
+		"@vue/tsconfig": "^0.7.0",
+		"madge": "^8.0.0",
+		"magic-string": "^0.30.17",
+		"sass": "^1.86.3",
+		"tinyglobby": "^0.2.12",
+		"typescript": "~5.7.2",
+		"vite": "^6.3.4",
+		"vue-tsc": "^2.2.0"
+	},
+	"packageManager": "yarn@4.9.2"
+}
